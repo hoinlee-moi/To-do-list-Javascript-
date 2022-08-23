@@ -1,4 +1,5 @@
 let id = 0;
+//필요한 element 모아놓은 곳
 const obj = {
   btn: {
     addBtn: document.querySelector("#btn-add"),

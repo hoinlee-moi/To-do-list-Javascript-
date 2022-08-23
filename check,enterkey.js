@@ -14,7 +14,7 @@ function check(listId) {
     parent.insertBefore(wrap, parent.childNodes[2]);
   }
 }
-
+//input요소에서 엔터키 입력시 관련함수를 실행시켜주는 함수
 function enterkey(fun, listId) {
   if (window.event.keyCode == 13) {
     if (listId === "undfined") {
