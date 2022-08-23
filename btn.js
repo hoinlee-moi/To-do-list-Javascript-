@@ -17,7 +17,7 @@ const OBJ = {
 function add() {
   const val = OBJ.value["inputContent"].value;
   if (val === "") {
-    alert("할 일을 입력해주세요!");
+    alert("please write it down");
   } else {
     makeList(val, id);
     OBJ.value["inputContent"].value = "";
@@ -69,7 +69,7 @@ function edit(listId) {
 //delete버튼 누를시 list에 입력된 내용을 삭제
 function del(listId) {
   const wrap = document.querySelector(`#wrap-list${listId}`);
-  let result = confirm("삭제하시겠습니까?");
+  let result = confirm("Are you sure delete?");
   if (result) {
     wrap.remove();
   }
