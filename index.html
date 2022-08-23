@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <!-- css파일 -->
+    <link rel="stylesheet" href="default.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="box.css" />
+    <link rel="stylesheet" href="text.css" />
+    <link rel="stylesheet" href="btn,input.css" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <!-- layout,wrap은 layout.css파일 -->
+    <div class="container">
+      <div class="box-title">
+        <h1 class="text-title">To do list!</h1>
+      </div>
+      <div class="box-content">
+        <input type="text" class="input-content" id="input-content" placeholder="할 일을 입력해주세요." onkeyup="enterkey(add)" />
+        <button class="btn-add" id="btn-add" onclick="add()">Add</button>
+      </div>
+      <div class="container-list" id="container-list">
+        <div class="box-explain">
+          <p class="text-explain-check">Do</p>
+          <p class="text-explain-list">List</p>
+          <p class="text-explain-modify">Modify</p>
+        </div>
+      </div>
+    </div>
+    <script src="check,enterkey.js"></script>
+    <script src="btn.js"></script>
+  </body>
+</html>

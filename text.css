@@ -1,0 +1,10 @@
+.text-title {
+    font-size: 50px;
+}
+.text-list {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+    font-size: 18px;
+    white-space: nowrap;
+}

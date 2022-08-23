@@ -1,0 +1,38 @@
+.input-content {
+    min-width: 300px;
+    padding: 3px;
+    border-radius: 2px 0 0 2px;
+    font-size: 16px;
+    outline: none;
+}
+.input-list-check {
+    margin-right: 2%;
+}
+.input-edit-list {
+    max-width: 60%;
+    margin-left: 10px;
+    border: solid 2px black;
+    border-radius: 2px;
+    font-size: 14px;
+}
+.btn-add {
+    width: 30px;
+    border-radius: 0 2px 2px 0;
+    font-weight: bold;
+}
+.btn-edit {
+    width: 30px;
+    background-color: white;
+    font-weight: bold;
+}
+.btn-delete {
+    width: 50px;
+    background-color: white;
+    font-weight: bold;
+}
+.btn-add,
+.btn-delete,
+.btn-edit,
+.input-list-check {
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #dcdcdc;
+}
+.container-list {
+    width: 80%;
+    max-width: 500px;
+    min-height: 50%;
+    margin: auto;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+.wrap-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    width: 100%;
+}
