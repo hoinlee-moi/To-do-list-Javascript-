@@ -64,12 +64,26 @@ Vanilla JS로 To do list만들기
 <details>
 <summary style="cursor : pointer;">4.펼치기</summary>
 
-- 주로 쓰던 방법은 input 태그 안에 javascript를 사용하였었는데 HTML엔 HTML엔요소들만 집어 넣자 라는 생각으로 따로 구현하였는데 HTML에선 간단하게 사용된 코드가 javascript로 넘어오니 어떻게 써야 할지 몰랐습니다.
+- 주로 쓰던 방법은 input 태그 안에 javascript를 사용하였었는데 HTML엔 HTML의 요소들만 집어 넣자 라는 생각으로 따로 구현하였는데 HTML에선 간단하게 사용된 코드가 javascript로 넘어오니 어떻게 써야 할지 몰랐습니다.
 - 맨처음 enterkey()함수를 받을 때 this로 요소와 실행시킬 함수 이름을 받은뒤 this로 받은 요소에 addeventlistener를 사용 keyup과 keydown,keypress등을 이용해보며 테스트를 진행하였습니다.
 - 작동이 되는 것을 확인하였지만 페이지가 첫 로드될 때 엔터키를 2번 입력해야 함수가 동작했던 점, keyup을 하면 실행 될 때마다 실행 횟수가 늘어나며 빈칸으로 입력시 설정한 alert창이 계속 뜨던 것
 - list를 수정할 때 사용했던 input창에선 처음 빈칸으로 enter를 칠 땐 사용 되지만 다음 입력 때 수정 값을 입력하여 실행하면 그 다음부턴 빈칸시 수정함수가 실행되지 않는 문제
 - console.log로 하나씩 찍어보며 체크 해 보니 계속 중복 실행되는 문제를 발견해서 구글링을 해봤는데 무언가를 추가하는 해결책보다 더 간단한 방법을 찾아 수정하였습니다.
 - addeventlistener 자체를 삭제 그냥 if문 안에 widow.event.keycode로 조건을 걸어 사용하니 앞의 문제들이 말끔하게 해결되었으며 동작또한 아무 문제없이 해결되었습니다.<br>
+
+</details>
+<br>
+
+5. 함수 안에 함수 실행하기<br>
+<br>
+
+<details>
+<summary style="cursor : pointer;">5.펼치기</summary>
+
+- 함수 안에 함수를 선언하고 싶은데 function(funtion())을 하기엔 그냥 눈으로만 봐도 어색해 보여서 이는 테스트 전에 미리 한번 찾아봤습니다.
+- 자바스크트에서 매개변수를 함수를 사용하는 방법을 검색하여 알아낸 방법은 생각보다 간단했습니다.
+- enter라는 함수에 add함수를 매개변수로 넣고 싶다면 enter(add())가 아닌 enter(add)로 함수 이름만 인수로 html에서 보낸뒤 javascript에선 매개변수를 enter(fun)으로 받았다면 함수 내에서 enter(fun) { fun()} 이런식으로 실행하면 가능했었다.
+- 이를 이용해 enter라는 함수가 필요한 어떤 HTML에도 중복해서 사용 가능했습니다.
 
 </details>
 <br>
