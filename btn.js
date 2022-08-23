@@ -1,6 +1,6 @@
 let id = 0;
 //필요한 element 모아놓은 곳
-const obj = {
+const OBJ = {
   btn: {
     addBtn: document.querySelector("#btn-add"),
     editBtn: document.querySelector("#btn-edit"),
@@ -15,19 +15,18 @@ const obj = {
 };
 // input-content에 입력한 value값을 아래 list에 추가해주는 함수
 function add() {
-  const val = obj.value["inputContent"].value;
+  const val = OBJ.value["inputContent"].value;
   if (val === "") {
     alert("할 일을 입력해주세요!");
   } else {
     makeList(val, id);
-    obj.value["inputContent"].value = "";
+    OBJ.value["inputContent"].value = "";
     id++;
   }
 }
 // input-content에 입력한 value값으로 만든 html을 리스트 element에 붙이는 함수
 function makeList(content, id) {
-  const contain = obj.layout["containList"];
-  const newTag = document.createElement("div");
+  const contain = OBJ.layout["containList"];
   const tempHtml = `<div class="wrap-list" id="wrap-list${id}">
                       <div class="box-list" id="box-list">
                         <input type="checkbox" class="input-list-check" id="input-list-check" onchange="check(${id})" />
