@@ -1,22 +1,31 @@
 <!DOCTYPE html>
+<!-- 
+  아쉬운 점
+  - 셀렉터를 사용할때 document 스코프에서부터 계속 찾고 상대적으로 찾는 행동을 거의 하지 않음.
+  - 핸들러에서 event 값을 전달해줌에도 불구하고 이 객체 활용을 전혀 하지 않음.
+  - 다이내믹한 이벤트 핸들러를 매번 엘리먼트 생성시마다 할당하거나 빼고 있음 -> 이벤트 전달방식과 관련이 있는 내용, 이벤트 캡쳐링과 버블링에 대해서 이해를 좀 할필요가 있음
+
+  추가 미션
+  - item 갯수가 많아졌을때 발생하는 스크롤 이슈 디자인 버그 해결
+  - Edit 버튼 클릭했을때 버튼의 텍스트를 save 로 변경해주는 작업 + 버튼의 엘리먼트 선틱시 상대적인 위치로 찾기
+  - 나머지 위 아쉬운 점 보강할수 있는 만큼 트라이 해보기
+
+  부가 미션
+  - Bootstrap 과 같은 기타 스타일 관련 라이브러리 이용해서 디자인을 적용해보기
+ -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 구글폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
     <!-- css파일 -->
     <link rel="stylesheet" href="default.css" />
     <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="box.css" />
     <link rel="stylesheet" href="text.css" />
-    <link rel="stylesheet" href="btn,input.css" />
+    <link rel="stylesheet" href="btn-input.css" />     <!-- 일반적으로는 하이픈(-), 언더바(_), 닷(.) -->
     <title>To do list</title>
   </head>
-  <body>
     <!-- container,wrap은 layout.css파일 -->
     <div class="container">
       <div class="box-title">
@@ -34,7 +43,7 @@
         </div>
       </div>
     </div>
-    <script src="check,enterkey.js"></script>
+    <script src="check-enterkey.js"></script>     <!-- 일반적으로는 하이픈(-), 언더바(_), 닷(.) -->
     <script src="btn.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@ const OBJ = {
 };
 // input-content에 입력한 value값을 아래 list에 추가해주는 함수
 function add() {
-  const val = OBJ.value["inputContent"].value;
+  const val = OBJ.value.inputContent.value;
   if (val === "") {
     alert("please write it down");
   } else {
@@ -24,10 +24,13 @@ function add() {
     id++;
   }
 }
+
+
 // input-content에 입력한 value값으로 만든 html을 리스트 element에 붙이는 함수
 function makeList(content, id) {
   const contain = OBJ.layout["containList"];
-  const tempHtml = `<div class="wrap-list" id="wrap-list${id}">
+  // document.getElementById('wrap-list').dataset.id,
+  const tempHtml = `<div class="wrap-list" id="wrap-list${id}" data-id="${id}">
                       <div class="box-list" id="box-list">
                         <input type="checkbox" class="input-list-check" id="input-list-check" onchange="check(${id})" />
                         <p class="text-list" id="text-list">${content}</p>
