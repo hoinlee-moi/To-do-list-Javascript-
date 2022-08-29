@@ -6,7 +6,7 @@ const OBJ = {
     editBtn: document.querySelector("#btn-edit"),
     delBtn: document.querySelector("#btn-delete"),
   },
-  value: {
+  input: {
     inputContent: document.querySelector("#input-content"),
   },
   layout: {
@@ -15,12 +15,12 @@ const OBJ = {
 };
 // input-content에 입력한 value값을 아래 list에 추가해주는 함수
 function add() {
-  const val = OBJ.value.inputContent.value;
+  const val = OBJ.input.inputContent.value;
   if (val === "") {
     alert("please write it down");
   } else {
     makeList(val, id);
-    OBJ.value["inputContent"].value = "";
+    OBJ.input["inputContent"].value = "";
     id++;
   }
 }
@@ -29,21 +29,9 @@ function add() {
 // input-content에 입력한 value값으로 만든 html을 리스트 element에 붙이는 함수
 function makeList(content, id) {
   const contain = OBJ.layout["containList"];
+  const tempHtml = document.querySelector['#wrap-list']
   // document.getElementById('wrap-list').dataset.id,
-  const tempHtml = `<div class="wrap-list" id="wrap-list${id}" data-id="${id}">
-                      <div class="box-list" id="box-list">
-                        <input type="checkbox" class="input-list-check" id="input-list-check" onchange="check(${id})" />
-                        <p class="text-list" id="text-list">${content}</p>
-                      </div>
-                      <div class="box-edit">
-                        <button class="btn-edit" id="btn-edit" onclick="edit(${id})">
-                          Edit
-                        </button>
-                        <button class="btn-delete" id="btn-delete" onclick="del(${id})">
-                          Delete
-                        </button>
-                      </div>
-                    </div>`;
+  
   contain.insertAdjacentHTML("beforeend", tempHtml);
 }
 //edit 버튼 누를시 list에 입력된 내용을 수정 가능하게 하는 함수
