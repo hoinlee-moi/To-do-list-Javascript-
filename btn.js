@@ -20,32 +20,25 @@ function add() {
   if (val === "") {
     alert("please write it down");
   } else {
-    makeList(val, id);
-    OBJ.input["inputContent"].value = "";
+    const listItemElement = getListItemElement(val, id);
+    if (listItemElement) {
+      OBJ.layout.containList.appendChild(listItemElement);  
+      OBJ.input.inputContent.value = "";
+    } else {
+      // TODO: 리스트 추가 실패시 에러가 표시될수 있는 뭔가 동작이 필요함.
+    }
   }
 }
-const insertId = (element) => {
-  element.dataset.id = id;
-  id++;
-  return element;
-};
-const makeHtml = () => {
-  const currentValue = OBJ.input.inputContent.value;
+
+const getListItemElement = (currentValue, id) => {
   const newHtml = tempHtml.cloneNode(true);
-  const newHtmlPtag = newHtml.getElementsByTagName("p")[0];
-  newHtmlPtag.textContent = currentValue;
-  newHtml.style.display = "";
+  const newHtmlPtag = newHtml.querySelector("#text-list");
+  if(currentValue) newHtmlPtag.textContent = currentValue;
+  if (newHtml.style.display === 'none') newHtml.style.display = "";
+  newHtml.dataset.id = id;
   return newHtml;
 };
 
-// input-content에 입력한 value값으로 만든 html을 리스트 element에 붙이는 함수
-function makeList() {
-  const contain = OBJ.layout["containList"];
-  let tempHtml = makeHtml();
-  tempHtml = insertId(tempHtml);
-  // document.getElementById('wrap-list').dataset.id,
-  contain.appendChild(tempHtml);
-}
 //edit 버튼 누를시 list에 입력된 내용을 수정 가능하게 하는 함수
 function edit(element) {
   const box = element.querySelector("#box-list");
